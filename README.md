@@ -1,1 +1,0 @@
-# Cuidesehoje.com.br
