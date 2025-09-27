@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuide-se Hoje - Saúde e Bem-estar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    /* Botão sanduíche */
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+    /* Menu lateral */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #005fa3;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .menu a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .menu a:hover {
+      background: #004080;
+    }
+    .menu.active {
+      left: 0;
+    }
+    /* Conteúdo principal */
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0077cc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #005fa3;
+    }
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cuide-se Hoje</h1>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
 
+  <!-- MENU SANDUÍCHE -->
+  <nav class="menu" id="menu">
+    <a href="index.html">Início</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="politica.html">Política de Privacidade</a>
+    <a href="termos.html">Termos de Uso</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <h2>Bem-vindo ao Cuide-se Hoje!</h2>
+    <p>Aqui você encontra artigos completos sobre saúde, exercícios,
+    alimentação equilibrada e qualidade de vida.</p>
+    <a class="btn" href="artigos.html">Ver artigos</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cuide-se Hoje - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
