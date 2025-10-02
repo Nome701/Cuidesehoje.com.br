@@ -241,47 +241,57 @@
       document.getElementById("menu").classList.toggle("active");
     }
   </script>
-       // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+       <script type="module">
+  // Importar funções do Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyB_kH0LJ7JMquGRN494GsO_-4Ib3bO8MWM",
-  authDomain: "cuidesehojecombr.firebaseapp.com",
-  projectId: "cuidesehojecombr",
-  storageBucket: "cuidesehojecombr.firebasestorage.app",
-  messagingSenderId: "124771872021",
-  appId: "1:124771872021:web:f3963e4f6e96ed3a234d1c",
-  measurementId: "G-JF66WK4ZRS"
-};
+  // Configuração do Firebase (use só a sua mais recente!)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCkJpzIZk9dSCa3f6pBMKdv2ZF8LiLVZ8",
+    authDomain: "cuidesehoje-bc2c5.firebaseapp.com",
+    projectId: "cuidesehoje-bc2c5",
+    storageBucket: "cuidesehoje-bc2c5.appspot.com",
+    messagingSenderId: "654525052543",
+    appId: "1:654525052543:web:c4953613ffd8eb1ba0714a",
+    measurementId: "G-N69428XMY3"
+  };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+  // Inicializar Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCkJpzI2xK9dSCa3f6pBMKdv2ZF8LiLVZ8",
-  authDomain: "cuidesehoje-bc2c5.firebaseapp.com",
-  projectId: "cuidesehoje-bc2c5",
-  storageBucket: "cuidesehoje-bc2c5.firebasestorage.app",
-  messagingSenderId: "654525052543",
-  appId: "1:654525052543:web:c4953613ffd8eb1ba0714a",
-  measurementId: "G-N69428XMY3"
-};
+  // Função para capturar avaliação
+  const estrelasDiv = document.getElementById("estrelas");
+  const resultado = document.getElementById("resultado");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  let estrelas = estrelasDiv.innerText.split("");
+
+  estrelasDiv.innerHTML = "";
+
+  estrelas.forEach((estrela, i) => {
+    let span = document.createElement("span");
+    span.innerText = estrela;
+    span.style.fontSize = "30px";
+    span.style.cursor = "pointer";
+
+    span.addEventListener("click", async () => {
+      let nota = i + 1;
+      resultado.innerText = `Você deu ${nota} estrela(s)!`;
+
+      try {
+        await addDoc(collection(db, "avaliacoes"), {
+          nota: nota,
+          data: new Date()
+        });
+        alert("Avaliação salva com sucesso!");
+      } catch (e) {
+        console.error("Erro ao salvar:", e);
+      }
+    });
+
+    estrelasDiv.appendChild(span);
+  });
+       </script>
 </body>
 </html>
