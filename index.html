@@ -243,66 +243,6 @@
     <a class="btn" href="artigos.html"> clique aqui Ver artigos e leia todos eles para ter uma saúde incrível e uma alimentação equilibrada.!</a>
   </main>
   <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
-    }
-  </script>
-       <script type="module">
-  // Importar funções do Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-  // Configuração do Firebase (use só a sua mais recente!)
-  const firebaseConfig = {
-    apiKey: "AIzaSyCkJpzIZk9dSCa3f6pBMKdv2ZF8LiLVZ8",
-    authDomain: "cuidesehoje-bc2c5.firebaseapp.com",
-    projectId: "cuidesehoje-bc2c5",
-    storageBucket: "cuidesehoje-bc2c5.appspot.com",
-    messagingSenderId: "654525052543",
-    appId: "1:654525052543:web:c4953613ffd8eb1ba0714a",
-    measurementId: "G-N69428XMY3"
-  };
-
-  // Inicializar Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Função para capturar avaliação
-  const estrelasDiv = document.getElementById("estrelas");
-  const resultado = document.getElementById("resultado");
-
-  let estrelas = estrelasDiv.innerText.split("");
-
-  estrelasDiv.innerHTML = "";
-
-  estrelas.forEach((estrela, i) => {
-    let span = document.createElement("span");
-    span.innerText = estrela;
-    span.style.fontSize = "30px";
-    span.style.cursor = "pointer";
-
-    span.addEventListener("click", async () => {
-      let nota = i + 1;
-      resultado.innerText = `Você deu ${nota} estrela(s)!`;
-
-      try {
-        await addDoc(collection(db, "avaliacoes"), {
-          nota: nota,
-          data: new Date()
-        });
-        alert("Avaliação salva com sucesso!");
-      } catch (e) {
-        console.error("Erro ao salvar:", e);
-      }
-    });
-
-    estrelasDiv.appendChild(span);
-  });
-       </script>
-       <div id="avaliacao">
-  <h3>Avalie este site:</h3>
-  <div id="estrelas">★★★★★</div>
-  <p id="resultado"></p>
        </div>
        <meta http-equiv="Cache-Control" content="public, max-age=2592000">
 </body>
