@@ -129,6 +129,13 @@
     }
   </style>
 </head>
+    <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").then(() => {
+    console.log("Service Worker registrado com sucesso!");
+  });
+}
+    </script>
 <body>
   <header>
     <h1></h1>
