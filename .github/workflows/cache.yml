@@ -1,0 +1,40 @@
+name: Cache Automático e Otimização
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do site
+        uses: actions/checkout@v3
+
+      - name: Instalar otimizadores
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick optipng jpegoptim
+
+      - name: Otimizar imagens
+        run: |
+          find . -type f -iname "*.jpg" -exec jpegoptim --max=80 {} \;
+          find . -type f -iname "*.png" -exec optipng -o7 {} \;
+          find . -type f -iname "*.webp" -exec mogrify -strip {} \;
+
+      - name: Criar cabeçalhos de cache
+        run: |
+          mkdir -p _headers
+          cat <<EOF > _headers
+          /*
+            Cache-Control: public, max-age=31536000, immutable
+          EOF
+
+      - name: Publicar no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
