@@ -226,6 +226,13 @@ if ("serviceWorker" in navigator) {
     }
   </style>
 </head>
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => {
+    console.log('Service Worker ativo e cache configurado!');
+  });
+}
+    </script>
    <body>
 <style>
   .img-centro {
