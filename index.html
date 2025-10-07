@@ -153,6 +153,27 @@
   <a href="quemsomos.html">👥 Quem Somos</a>
   <a href="faq.html">❓ FAQ</a>
   <a href="cookies.html">🍪 Política de Cookies</a>
+    <script>
+  const menuBtn = document.getElementById("menuToggle");
+  const sideMenu = document.getElementById("sideMenu");
+
+  // Criar overlay (fundo escuro)
+  const overlay = document.createElement("div");
+  overlay.id = "menuOverlay";
+  document.body.appendChild(overlay);
+
+  // Abre e fecha o menu
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+
+  // Fecha o menu ao clicar fora
+  overlay.addEventListener("click", () => {
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+    </script>
 </nav>
   </a>
   <header>
