@@ -1,23 +1,190 @@
-<!-- Aviso de Cookies -->
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #004aad; color: white; text-align: center; padding: 15px; z-index: 9999; font-size: 14px;">
-  🍪 Usamos cookies para melhorar sua experiência no site. 
-  <a href="politica-de-cookies.html" style="color: #ffd700; text-decoration: underline;">Saiba mais</a>.
-  <button id="accept-cookies" style="margin-left: 10px; padding: 6px 12px; background: #ffd700; color: #004aad; border: none; border-radius: 5px; cursor: pointer;">Aceitar</button>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const banner = document.getElementById("cookie-banner");
-    const accept = document.getElementById("accept-cookies");
-
-    if (localStorage.getItem("cookiesAccepted")) {
-      banner.style.display = "none";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuide-se Hoje - Saúde, Bem-estar e Qualidade de Vida</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #333;
     }
 
-    accept.addEventListener("click", () => {
-      localStorage.setItem("cookiesAccepted", "true");
-      banner.style.display = "none";
+    /* Cabeçalho */
+    header {
+      background: #007bff;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    header button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Menu sanduíche */
+    nav {
+      display: none;
+      background: #f8f8f8;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px;
+      color: #007bff;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a:hover {
+      background: #e0e0e0;
+    }
+
+    /* Logo */
+    .logo {
+      display: block;
+      margin: 20px auto;
+      height: 90px;
+      width: auto;
+    }
+
+    /* Conteúdo principal */
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #007bff;
+    }
+
+    main p {
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    /* Banner de cookies */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      z-index: 999;
+      font-size: 15px;
+    }
+
+    #cookie-banner a {
+      color: #ffdf00;
+      text-decoration: underline;
+    }
+
+    #accept-cookies {
+      margin-left: 10px;
+      padding: 6px 12px;
+      background: #ffdf00;
+      color: #004aad;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007bff;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <button onclick="toggleMenu()">☰</button>
+    <h1>Cuide-se Hoje</h1>
+  </header>
+
+  <!-- Menu Sanduíche -->
+  <nav id="menu">
+    <a href="index.html">🏠 Início</a>
+    <a href="artigos.html">📰 Artigos</a>
+    <a href="politica-de-privacidade.html">🔒 Política de Privacidade</a>
+    <a href="termos-de-uso.html">📜 Termos de Uso</a>
+    <a href="contato.html">✉️ Contato</a>
+    <a href="quem-somos.html">👥 Quem Somos</a>
+    <a href="faq.html">❓ FAQ</a>
+    <a href="politica-de-cookies.html">🍪 Política de Cookies</a>
+  </nav>
+
+  <!-- Logo -->
+  <img src="assets/logo.svg" alt="Cuide-se Hoje" class="logo">
+
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Bem-vindo ao Cuide-se Hoje!</h1>
+    <p>
+      Aqui você encontra artigos completos sobre saúde, exercícios,
+      alimentação equilibrada e bem-estar físico e mental.
+      <br><br>
+      Cuide do seu corpo e da sua mente hoje para um amanhã mais saudável! 💚
+    </p>
+  </main>
+
+  <!-- Aviso de Cookies -->
+  <div id="cookie-banner">
+    🍪 Usamos cookies para melhorar sua experiência no site.
+    <a href="politica-de-cookies.html">Saiba mais</a>
+    <button id="accept-cookies">Aceitar</button>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 Cuide-se Hoje - Todos os direitos reservados.
+  </footer>
+
+  <!-- Script do menu -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+  <!-- Script do banner de cookies -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const banner = document.getElementById("cookie-banner");
+      const accept = document.getElementById("accept-cookies");
+
+      if (localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "none";
+      }
+
+      accept.addEventListener("click", () => {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+      });
     });
-  });
-</script>
-<img src="assets/logo.svg" alt="Cuide-se Hoje" style="height:80px; width:auto;">
+  </script>
+</body>
+</html>
