@@ -146,6 +146,40 @@
       document.getElementById("menu").style.width = "0";
     }
   </script>
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyB_kH0LJ7JMquGRN494GsO_-4Ib3bO8MWM",
+    authDomain: "cuidesehojecombr.firebaseapp.com",
+    projectId: "cuidesehojecombr",
+    storageBucket: "cuidesehojecombr.firebasestorage.app",
+    messagingSenderId: "124771872021",
+    appId: "1:124771872021:web:b4495e1607b9a041234d1c",
+    measurementId: "G-34QJ5Y2JZE"
+  };
+
+  // Inicializa o Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Função para salvar avaliação
+  async function salvarAvaliacao(estrelas) {
+    try {
+      await addDoc(collection(db, "avaliacoes"), {
+        estrelas: estrelas,
+        data: new Date()
+      });
+      alert("Avaliação registrada! Obrigado 😄");
+    } catch (e) {
+      console.error("Erro ao salvar avaliação:", e);
+    }
+  }
+
+  // Deixa a função acessível no HTML
+  window.salvarAvaliacao = salvarAvaliacao;
+</script>
 </body>
 </html>
