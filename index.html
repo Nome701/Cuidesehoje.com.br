@@ -181,5 +181,36 @@
   // Deixa a função acessível no HTML
   window.salvarAvaliacao = salvarAvaliacao;
 </script>
+  <div style="text-align:center; margin-top: 20px;">
+  <h2 style="color:#007bff;">Avalie este site:</h2>
+  <div id="stars">
+    <span class="star" onclick="avaliar(1)">★</span>
+    <span class="star" onclick="avaliar(2)">★</span>
+    <span class="star" onclick="avaliar(3)">★</span>
+    <span class="star" onclick="avaliar(4)">★</span>
+    <span class="star" onclick="avaliar(5)">★</span>
+  </div>
+</div>
+
+<style>
+  .star {
+    font-size: 2em;
+    cursor: pointer;
+    color: gray;
+  }
+  .star.selected {
+    color: gold;
+  }
+</style>
+
+<script>
+  function avaliar(estrelas) {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((s, i) => {
+      s.classList.toggle('selected', i < estrelas);
+    });
+    salvarAvaliacao(estrelas);
+  }
+</script>
 </body>
 </html>
