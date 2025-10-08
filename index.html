@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuide-se Hoje - Saúde, Alimentação e Bem-estar</title>
 
+  <!-- ✅ Metadescrição para SEO -->
+  <meta name="description" content="Cuide-se Hoje: artigos sobre saúde, alimentação equilibrada, exercícios e bem-estar físico e mental. Cuide do seu corpo e da sua mente! 💚">
+
+  <!-- ✅ Preload do CSS -->
+  <link rel="preload" href="style.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.min.css"></noscript>
+
+  <!-- ✅ AdSense com carregamento assíncrono -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
+     crossorigin="anonymous"></script>
+
+  <!-- ✅ JavaScript adiado -->
+  <script src="menu.min.js" defer></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="menu-icon" onclick="openNav()">☰</span>
+    <div class="logo">Cuide-se Hoje</div>
+  </header>
+
+  <nav id="menu">
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <a href="index.html">Início</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contato.html">Contato</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
+
+  <main>
+    <h1>Bem-vindo!!</h1>
+
+    <!-- ✅ Imagem otimizada com lazy loading -->
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="Logo.webp" 
+           alt="Cuide-se Hoje - Alimentação Saudável" 
+           loading="lazy"
+           width="350" 
+           height="auto"
+           style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    </div>
+
+    <p>Aqui você encontra artigos completos sobre saúde, exercícios, alimentação equilibrada e bem-estar físico e mental.</p>
+    <p>Cuide do seu corpo e da sua mente hoje para um amanhã mais saudável! 💚</p>
+  </main>
+
+  <footer>
+    © 2025 Cuide-se Hoje - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("menu").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("menu").style.width = "0";
+    }
+  </script>
+
+</body>
+</html>
