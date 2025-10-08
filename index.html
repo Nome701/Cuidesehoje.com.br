@@ -1,197 +1,131 @@
-<!DOCTYPE html>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
+     crossorigin="anonymous"></script>
+  <!-- Logo -->
+  <img src="assets/logo.svg" alt="Cuide-se Hoje" class="logo">
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
-     crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuide-se Hoje - Saúde, Bem-estar e Qualidade de Vida</title>
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <title>Cuide-se Hoje</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
-      color: #333;
     }
 
-    /* Cabeçalho */
+    /* Cabeçalho preto e centralizado */
     header {
-      background: #000000;
+      background-color: #000;
       color: white;
-      padding: 10px 0;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
       position: relative;
     }
 
-    header button {
-      position: absolute;
-      left: 15px;
-      top: 10px;
-      background: none;
-      border: none;
-      color: white;
+    .menu-icon {
       font-size: 28px;
       cursor: pointer;
+      position: absolute;
+      left: 20px; /* deixa o botão fixo à esquerda */
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    /* Menu sanduíche */
-    nav {
-      display: none;
-      background: #f8f8f8;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
       text-align: center;
-      padding: 10px;
+    }
+
+    /* Menu lateral */
+    nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
     }
 
     nav a {
-      display: block;
-      padding: 10px;
-      color: #000000;
+      padding: 10px 25px;
       text-decoration: none;
-      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      background: #e0e0e0;
+      background-color: #333;
     }
 
-    /* Logo */
-    .logo {
-      display: block;
-      margin: 20px auto;
-      height: 90px;
-      width: auto;
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      cursor: pointer;
     }
 
-    /* Conteúdo principal */
     main {
       padding: 20px;
       text-align: center;
     }
 
-    main h1 {
-      color: #007bff;
-    }
-
-    main p {
-      line-height: 1.6;
-      font-size: 18px;
-    }
-
-    /* Banner de cookies */
-    #cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      z-index: 999;
-      font-size: 15px;
-    }
-
-    #cookie-banner a {
-      color: #ffdf00;
-      text-decoration: underline;
-    }
-
-    #accept-cookies {
-      margin-left: 10px;
-      padding: 6px 12px;
-      background: #ffdf00;
-      color: #004aad;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #000000;
+      background-color: #000;
       color: white;
-      margin-top: 20px;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
-
 <body>
-  <!-- Cabeçalho -->
+
   <header>
-    <button onclick="toggleMenu()">☰</button>
-    <h1></h1>
+    <span class="menu-icon" onclick="openNav()">☰</span>
+    <div class="logo">Cuide-se Hoje</div>
   </header>
 
-  <!-- Menu Sanduíche -->
   <nav id="menu">
-    <a href="index.html">🏠 Início</a>
-    <a href="artigos.html">📰 Artigos</a>
-    <a href="politica-de-privacidade.html">🔒 Política de Privacidade</a>
-    <a href="termos-de-uso.html">📜 Termos de Uso</a>
-    <a href="contato.html">✉️ Contato</a>
-    <a href="quem-somos.html">👥 Quem Somos</a>
-    <a href="faq.html">❓ FAQ</a>
-    <a href="politica-de-cookies.html">🍪 Política de Cookies</a>
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contato.html">Contato</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
   </nav>
 
-  <!-- Logo -->
-  <img src="assets/logo.svg" alt="Cuide-se Hoje" class="logo">
-
-  <!-- Conteúdo principal -->
   <main>
-    <h1>Bem-vindo</h1>
-    <p>
-      Aqui você encontra artigos completos sobre saúde, exercícios,
-      alimentação equilibrada e bem-estar físico e mental.
-      <br><br>
-      Cuide do seu corpo e da sua mente hoje para um amanhã mais saudável! 💚
-    </p>
+    <h1>Bem-vindo ao Cuide-se Hoje!</h1>
+    <p>Aqui você encontra artigos completos sobre saúde, exercícios, alimentação equilibrada e bem-estar físico e mental.</p>
+    <p>Cuide do seu corpo e da sua mente hoje para um amanhã mais saudável! 💚</p>
   </main>
 
-  <!-- Aviso de Cookies -->
-  <div id="cookie-banner">
-    🍪 Usamos cookies para melhorar sua experiência no site.
-    <a href="politica-de-cookies.html">Saiba mais</a>
-    <button id="accept-cookies">Aceitar</button>
-  </div>
-  h2>Bem-vindo ao Cuide-se Hoje!</h2>
-    <p>Aqui você encontra artigos completos sobre saúde, exercícios,
-    alimentação equilibrada e qualidade de vida.</p>
-    <a class="btn" href="artigos.html"> clique aqui Ver artigos e leia todos eles para ter uma saúde incrível e uma alimentação equilibrada.!</a>
-</main>
-
-  <!-- Rodapé -->
   <footer>
     © 2025 Cuide-se Hoje - Todos os direitos reservados.
   </footer>
 
-  <!-- Script do menu -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    function openNav() {
+      document.getElementById("menu").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("menu").style.width = "0";
     }
   </script>
 
-  <!-- Script do banner de cookies -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const banner = document.getElementById("cookie-banner");
-      const accept = document.getElementById("accept-cookies");
-
-      if (localStorage.getItem("cookiesAccepted")) {
-        banner.style.display = "none";
-      }
-
-      accept.addEventListener("click", () => {
-        localStorage.setItem("cookiesAccepted", "true");
-        banner.style.display = "none";
-      });
-    });
-  </script>
 </body>
 </html>
