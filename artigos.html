@@ -1,58 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
-     crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alimentação Saudável - Cuide-se Hoje</title>
+  <meta name="description" content="Descubra como manter uma alimentação saudável e equilibrada para melhorar sua saúde, energia e bem-estar.">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
+     crossorigin="anonymous"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.7;
+      margin: 0;
+      padding: 0;
       background: #f9f9f9;
       color: #333;
+      line-height: 1.7;
     }
+
+    /* Cabeçalho e menu */
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
     h1 {
       color: #0077cc;
+      margin-bottom: 20px;
     }
-    h1 {
-      margin-top: 25px;
-      color: #005fa3;
-    }
+
     p {
       margin-bottom: 15px;
     }
-    a {
+
+    a.voltar {
       display: inline-block;
       margin-top: 20px;
-      padding: 8px 12px;
+      padding: 10px 16px;
       background: #0077cc;
       color: white;
       border-radius: 8px;
       text-decoration: none;
     }
-    a:hover {
+
+    a.voltar:hover {
       background: #005fa3;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
-  <header style="text-align:center; padding: 10px;">
-    <div style="text-align: center; padding: 20px;">
-  <img 
-    src="images/cuidesehoje.webp" 
-    alt="Cuide-se Hoje - Saúde, exercícios e bem-estar" 
-    width="300"
-    style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
-    fetchpriority="high"
-  >
-</div>
-    </div>
+
+<body>
+  <header>
+    <span class="menu-icon" onclick="openNav()">☰</span>
+    <div class="logo">Cuide-se Hoje</div>
   </header>
+
+  <nav id="menu">
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <a href="index.html">Início</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contato.html">Contato</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
+
+  <main>
+    <div style="text-align:center; margin-bottom: 20px;">
+      <img 
+        src="images/cuidesehoje.webp" 
+        alt="Cuide-se Hoje - Saúde, exercícios e bem-estar" 
+        width="300"
+        style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+        fetchpriority="high"
+      >
+    </div>
+
+    <h1>Alimentação Saudável</h1>
+
+    <p>Manter uma alimentação saudável é essencial para garantir o bom funcionamento do corpo e da mente. Uma dieta equilibrada ajuda a fortalecer o sistema imunológico, prevenir doenças e melhorar a disposição no dia a dia.</p>
+
+    <p>Os alimentos naturais, como frutas, legumes, verduras e grãos integrais, devem ser prioridade no prato. Eles fornecem vitaminas, minerais e fibras que regulam o organismo e contribuem para uma boa digestão.</p>
+
+    <p>Evitar o consumo excessivo de açúcares, gorduras saturadas e alimentos ultraprocessados também é fundamental. Pequenas mudanças, como reduzir o refrigerante e aumentar o consumo de água, já fazem uma grande diferença.</p>
+
+    <p>Além disso, é importante manter uma rotina de horários para as refeições e evitar longos períodos em jejum. Comer com calma e mastigar bem os alimentos também ajuda na absorção dos nutrientes e na sensação de saciedade.</p>
+
+    <p>Comer bem não precisa ser complicado — o segredo está em fazer boas escolhas e manter o equilíbrio. 🍎🥦</p>
+
+    <a href="artigos.html" class="voltar">← Voltar aos artigos</a>
+  </main>
+
+  <footer>
+    © 2025 Cuide-se Hoje - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("menu").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("menu").style.width = "0";
+    }
+  </script>
+</body>
+</html>
   <h1>Alimentação Saudável: O Caminho para uma Vida Melhor</h1>
 
-  <p>A alimentação saudável é um dos pilares fundamentais para garantir qualidade de vida, prevenir doenças e manter o corpo funcionando de maneira equilibrada. Em um mundo onde a correria do dia a dia muitas vezes nos leva a escolhas rápidas e pouco nutritivas, aprender a se alimentar bem tornou-se não apenas uma necessidade, mas também uma forma de autocuidado. Neste artigo completo, vamos explorar os princípios da alimentação saudável, como aplicá-los na prática, os benefícios de uma dieta equilibrada e dicas práticas para melhorar sua relação com a comida.</p>
+  <p>A alimentação saudável é um dos pilares fundamentais para garantir qualidade dando de maneira equilibrada. Em um mundo onde a correria do dia a dia muitas vezes nos leva a escolhas rápidas e pouco nutritivas, aprender a se alimentar bem tornou-se não apenas uma necessidade, mas também uma forma de autocuidado. Neste artigo completo, vamos explorar os princípios da alimentação saudável, como aplicá-los na prática, os benefícios de uma dieta equilibrada e dicas práticas para melhorar sua relação com a comida.</p>
 
   <h1>O que é uma alimentação saudável?</h1>
   <p>Uma alimentação saudável é aquela que fornece todos os nutrientes essenciais para o bom funcionamento do organismo, em quantidades adequadas e de forma equilibrada. Isso significa incluir no dia a dia uma combinação variada de alimentos naturais, como frutas, verduras, legumes, grãos integrais, proteínas magras e gorduras boas.</p>
