@@ -181,7 +181,7 @@
   // Deixa a função acessível no HTML
   window.salvarAvaliacao = salvarAvaliacao;
 </script>
-  <div style="text-align:center; margin-top: 20px;">
+<div style="text-align:center; margin-top: 20px;">
   <h2 style="color:#007bff;">Avalie este site:</h2>
   <div id="stars">
     <span class="star" onclick="avaliar(1)">★</span>
@@ -197,6 +197,7 @@
     font-size: 2em;
     cursor: pointer;
     color: gray;
+    transition: color 0.2s;
   }
   .star.selected {
     color: gold;
@@ -209,8 +210,24 @@
     stars.forEach((s, i) => {
       s.classList.toggle('selected', i < estrelas);
     });
+
+    // Salva no Firebase
     salvarAvaliacao(estrelas);
+
+    // Salva localmente no navegador do usuário
+    localStorage.setItem("avaliacaoCuideSeHoje", estrelas);
   }
+
+  // Quando o site carregar, verifica se há avaliação salva no navegador
+  window.addEventListener("load", () => {
+    const estrelasSalvas = localStorage.getItem("avaliacaoCuideSeHoje");
+    if (estrelasSalvas) {
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((s, i) => {
+        s.classList.toggle('selected', i < estrelasSalvas);
+      });
+    }
+  });
 </script>
 </body>
 </html>
