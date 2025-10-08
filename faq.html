@@ -3,54 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perguntas Frequentes - Cuide-se Hoje</title>
+  <title>Perguntas Frequentes (FAQ) - Cuide-se Hoje</title>
+  <meta name="description" content="Tire suas dúvidas sobre o site Cuide-se Hoje. Saiba como funciona, se é gratuito e como aproveitar nossos artigos de saúde e bem-estar.">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
+     crossorigin="anonymous"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Cabeçalho e menu */
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Conteúdo principal */
+    main {
+      max-width: 900px;
+      margin: 30px auto;
       padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     h1 {
-      color: #7a004d;
       text-align: center;
+      color: #0077cc;
+      margin-bottom: 25px;
     }
+
     details {
       margin-bottom: 15px;
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 15px;
       border-radius: 8px;
       background: #f9f9f9;
+      transition: 0.3s;
     }
+
+    details[open] {
+      background: #eef7ff;
+      border-color: #0077cc;
+    }
+
     summary {
       font-weight: bold;
       cursor: pointer;
+      color: #0077cc;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
+
 <body>
-  <h1>Perguntas Frequentes (FAQ)</h1>
+  <header>
+    <span class="menu-icon" onclick="openNav()">☰</span>
+    <div class="logo">Cuide-se Hoje</div>
+  </header>
 
-  <details>
-    <summary>O que é o site Cuide-se Hoje?</summary>
-    <p>É um portal com artigos sobre saúde, alimentação, exercícios e qualidade de vida.</p>
-  </details>
+  <nav id="menu">
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <a href="index.html">Início</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contato.html">Contato</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
 
-  <details>
-    <summary>Posso compartilhar os artigos?</summary>
-    <p>Sim, desde que cite a fonte original e não modifique o conteúdo.</p>
-  </details>
+  <main>
+    <h1>Perguntas Frequentes (FAQ)</h1>
 
-  <details>
-    <summary>Os conteúdos substituem orientação médica?</summary>
-    <p>Não. Todo o conteúdo é informativo e não substitui a orientação de profissionais de saúde.</p>
-  </details>
+    <details>
+      <summary>O que é o site Cuide-se Hoje?</summary>
+      <p>O <strong>Cuide-se Hoje</strong> é um portal que compartilha artigos e dicas sobre saúde, alimentação, exercícios físicos e bem-estar geral, ajudando você a viver de forma mais equilibrada.</p>
+    </details>
 
-  <details>
-    <summary>O site é gratuito?</summary>
-    <p>Sim, todos os artigos e informações são gratuitos.</p>
-  </details>
+    <details>
+      <summary>Posso compartilhar os artigos?</summary>
+      <p>Sim! Você pode compartilhar os artigos livremente, desde que cite a fonte original e não altere o conteúdo publicado.</p>
+    </details>
 
+    <details>
+      <summary>Os conteúdos substituem orientação médica?</summary>
+      <p>Não. Nosso conteúdo é informativo e não substitui a avaliação de profissionais de saúde. Sempre procure um médico ou nutricionista quando necessário.</p>
+    </details>
+
+    <details>
+      <summary>O site é gratuito?</summary>
+      <p>Sim. Todo o conteúdo publicado no <strong>Cuide-se Hoje</strong> é gratuito e acessível a qualquer pessoa.</p>
+    </details>
+  </main>
+
+  <footer>
+    © 2025 Cuide-se Hoje - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("menu").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("menu").style.width = "0";
+    }
+  </script>
 </body>
 </html>
