@@ -1,1 +1,241 @@
+<meta name="monetag" content="c4bfbcbc57c61e92f0dbcc3a05466727">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuide-se Hoje - Saúde, Alimentação e Bem-estar</title>
 
+  <!-- ✅ Metadescrição para SEO -->
+  <meta name="description" content="Cuide-se Hoje: artigos sobre saúde, alimentação equilibrada, exercícios e bem-estar físico e mental. Cuide do seu corpo e da sua mente! 💚">
+
+  <!-- ✅ Preload do CSS -->
+  <link rel="preload" href="style.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.min.css"></noscript>
+
+  <!-- ✅ AdSense com carregamento assíncrono -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7434309430803089"
+     crossorigin="anonymous"></script>
+
+  <!-- ✅ JavaScript adiado -->
+  <script src="menu.min.js" defer></script>
+
+  <!-- ✅ Monetag Push Notifications -->
+  <script src="https://eechicha.com/act/files/tag.min.js?z=10022780" data-cfasync="false" async></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="menu-icon" onclick="openNav()">☰</span>
+    <div class="logo">Cuide-se Hoje</div>
+  </header>
+
+  <nav id="menu">
+    <span class="close-btn" onclick="closeNav()">&times;</span>
+    <a href="index.html">Início</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contato.html">Contato</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+    <a href="termos-de-uso.html">Termos de uso</a>
+  </nav>
+
+  <main>
+    <h1>Bem-vindo!!</h1>
+
+    <!-- ✅ Imagem otimizada com lazy loading -->
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="Logo.webp" 
+           alt="Cuide-se Hoje - Alimentação Saudável" 
+           loading="lazy"
+           width="350" 
+           height="230"
+           style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    </div>
+
+    <p>Aqui você encontra artigos completos sobre saúde, exercícios, alimentação equilibrada e bem-estar físico e mental.</p>
+    <p>Cuide do seu corpo e da sua mente hoje para um amanhã mais saudável! 💚</p>
+  </main>
+
+  <footer>
+    © 2025 Cuide-se Hoje - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("menu").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("menu").style.width = "0";
+    }
+  </script>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB_kH0LJ7JMquGRN494GsO_-4Ib3bO8MWM",
+      authDomain: "cuidesehojecombr.firebaseapp.com",
+      projectId: "cuidesehojecombr",
+      storageBucket: "cuidesehojecombr.firebasestorage.app",
+      messagingSenderId: "124771872021",
+      appId: "1:124771872021:web:b4495e1607b9a041234d1c",
+      measurementId: "G-34QJ5Y2JZE"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function salvarAvaliacao(estrelas) {
+      try {
+        await addDoc(collection(db, "avaliacoes"), {
+          estrelas: estrelas,
+          data: new Date()
+        });
+        alert("Avaliação registrada! Obrigado 😄");
+      } catch (e) {
+        console.error("Erro ao salvar avaliação:", e);
+      }
+    }
+
+    window.salvarAvaliacao = salvarAvaliacao;
+  </script>
+
+  <div style="text-align:center; margin-top: 20px;">
+    <h2 style="color:#007bff;">Avalie este site:</h2>
+    <div id="stars">
+      <span class="star" onclick="avaliar(1)">★</span>
+      <span class="star" onclick="avaliar(2)">★</span>
+      <span class="star" onclick="avaliar(3)">★</span>
+      <span class="star" onclick="avaliar(4)">★</span>
+      <span class="star" onclick="avaliar(5)">★</span>
+    </div>
+  </div>
+
+  <style>
+    .star {
+      font-size: 2em;
+      cursor: pointer;
+      color: gray;
+      transition: color 0.2s;
+    }
+    .star.selected {
+      color: gold;
+    }
+  </style>
+
+  <script>
+    function avaliar(estrelas) {
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((s, i) => {
+        s.classList.toggle('selected', i < estrelas);
+      });
+
+      salvarAvaliacao(estrelas);
+      localStorage.setItem("avaliacaoCuideSeHoje", estrelas);
+    }
+
+    window.addEventListener("load", () => {
+      const estrelasSalvas = localStorage.getItem("avaliacaoCuideSeHoje");
+      if (estrelasSalvas) {
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((s, i) => {
+          s.classList.toggle('selected', i < estrelasSalvas);
+        });
+      }
+    });
+  </script>
+
+  <!-- ✅ Monetag OnClick (Popunder) -->
+  <script>
+    (function(s){
+      s.dataset.zone='10022767',
+      s.src='https://al5sm.com/tag.min.js'
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
+
+</body>
+  </html>
